@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Generate Bill | Daily Need Shop</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css"
+    >
+    ,<link rel="stylesheet" href="css/billing.css">
+</head>
+
+<body>
+
+    <main class="billing-page">
+
+        <!-- BILL HEADER -->
+        <section class="billing-header">
+
+            <div>
+                <h1>DAILY NEED SHOP</h1>
+                <p>Daily Needs • Fresh Groceries</p>
+            </div>
+
+            <div class="billing-title">
+                <h2>INVOICE</h2>
+                <p>
+                    Bill No:
+                    <strong id="billNumber">---</strong>
+                </p>
+                <p>
+                    Date:
+                    <strong id="billDate">---</strong>
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- CUSTOMER INFORMATION -->
+        <section class="billing-info">
+
+            <div class="billing-card">
+
+                <h3>Customer Information</h3>
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="customerName">---</span>
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    <span id="customerPhone">---</span>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <span id="customerEmail">---</span>
+                </p>
+
+            </div>
+
+
+            <div class="billing-card">
+
+                <h3>Delivery Information</h3>
+
+                <p>
+                    <strong>Address:</strong>
+                </p>
+
+                <p id="customerAddress">
+                    ---
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRODUCTS -->
+        <section class="billing-products">
+
+            <h3>Ordered Products</h3>
+
+            <div class="billing-table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>#</th>
+                            <th>Product</th>
+                            <th>Qty</th>
+                            <th>Unit Price</th>
+                            <th>Total</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="billItems">
+
+                        <tr>
+                            <td
+                                colspan="5"
+                                class="loading-cell"
+                            >
+                                Loading order...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- BILL SUMMARY -->
+        <section class="billing-summary">
+
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="billSubtotal">
+                    ฿0.00
+                </strong>
+            </div>
+
+             <div class="summary-row">
+    <label for="deliveryFeeInput">
+        Delivery Fee
+    </label>
+
+    <input
+        type="number"
+        id="deliveryFeeInput"
+        value="0"
+        min="0"
+        step="0.01"
+    >
+</div>
+
+<div class="summary-row">
+    <label for="discountInput">
+        Discount
+    </label>
+
+    <input
+        type="number"
+        id="discountInput"
+        value="0"
+        min="0"
+        step="0.01"
+    >
+</div>
+
+            <div class="summary-row grand-total">
+                <span>Grand Total</span>
+                <strong id="grandTotal">
+                    ฿0.00
+                </strong>
+            </div>
+
+        </section>
+
+
+        <!-- PAYMENT INFORMATION -->
+        <section class="payment-information">
+
+            <div>
+                <strong>Payment Method:</strong>
+                <span id="paymentMethod">
+                    ---
+                </span>
+            </div>
+
+            <div>
+                <strong>Payment Status:</strong>
+                <span id="paymentStatus">
+                    ---
+                </span>
+            </div>
+
+        </section>
+
+
+        <!-- ACTION BUTTONS -->
+        <section class="billing-actions">
+
+            <button
+                type="button"
+                class="btn"
+                id="printBillBtn"
+            >
+                Print Bill
+            </button>
+
+            <button
+                type="button"
+                class="btn"
+                id="backToOrdersBtn"
+            >
+                Back to Orders
+            </button>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="billing-footer">
+
+            <p>
+                Thank you for shopping with
+                <strong>Daily Need Shop</strong>
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="js/billing.js"></script>
+
+</body>
+
+</html>

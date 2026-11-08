@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manage Orders | Dayli Need Shop</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/responsive.css">
+
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<h2>Admin Panel</h2>
+
+<ul>
+
+<li><a href="dashboard.html">📊 Dashboard</a></li>
+
+<li><a href="products.html">📦 Products</a></li>
+
+<li><a href="categories.html">🗂️ Categories</a></li>
+
+<li><a href="orders.html">🛒 Orders</a></li>
+
+<li><a href="customers.html">👥 Customers</a></li>
+
+<li><a href="reports.html">📈 Reports</a></li>
+
+<li><a href="settings.html">⚙️ Settings</a></li>
+
+<li><a href="../index.html">🏠 Website</a></li>
+
+</ul>
+
+</aside>
+
+<!-- Main Content -->
+
+<main class="admin-main">
+
+<header class="admin-header">
+
+<h1>Manage Orders</h1>
+
+<p>View and Manage Customer Orders</p>
+
+</header>
+
+ <div class="product-top-bar">
+
+    <input
+        type="text"
+        id="orderSearch"
+        placeholder="🔍 Search Order..."
+        autocomplete="off"
+    >
+
+    <button
+        type="button"
+        class="btn"
+        id="exportOrdersBtn"
+    >
+        Export Orders
+    </button>
+
+</div>
+
+<table class="admin-table">
+
+<thead>
+
+<tr>
+
+<th>Order ID</th>
+
+<th>Customer</th>
+
+<th>Date</th>
+
+<th>Total</th>
+
+<th>Status</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+ <tbody id="ordersTableBody">
+
+    <tr>
+
+        <td colspan="6">
+            Loading orders...
+        </td>
+
+    </tr>
+
+</tbody>
+
+</table>
+
+<div class="pagination">
+
+<a href="#">Previous</a>
+
+<a href="#" class="active">1</a>
+
+<a href="#">2</a>
+
+<a href="#">3</a>
+
+<a href="#">Next</a>
+
+</div>
+
+</main>
+
+</div>
+
+<!-- =========================
+     UPDATE ORDER STATUS MODAL
+========================= -->
+
+<div
+    class="admin-modal"
+    id="updateOrderStatusModal"
+    style="display: none;"
+>
+    <div class="admin-modal-content update-status-modal">
+
+        <div class="admin-modal-header">
+
+            <h2>Update Order Status</h2>
+
+            <button
+                type="button"
+                id="closeUpdateStatusModal"
+                class="modal-close"
+            >
+                ×
+            </button>
+
+        </div>
+
+        <div class="update-status-body">
+
+            <p>
+                Order ID:
+                <strong id="updateStatusOrderId">#</strong>
+            </p>
+
+            <label for="orderStatusSelect">
+                Select Status
+            </label>
+
+            <select id="orderStatusSelect">
+
+                <option value="pending">
+                    Pending
+                </option>
+
+                <option value="confirmed">
+                    Confirmed
+                </option>
+
+                <option value="processing">
+                    Processing
+                </option>
+
+                <option value="shipped">
+                    Shipped
+                </option>
+
+                <option value="delivered">
+                    Delivered
+                </option>
+
+                <option value="cancelled">
+                    Cancelled
+                </option>
+
+            </select>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="btn"
+                id="cancelUpdateStatusBtn"
+            >
+                Cancel
+            </button>
+
+            <button
+                type="button"
+                class="btn"
+                id="saveOrderStatusBtn"
+            >
+                Update Status
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+<!-- =========================
+     ORDER DETAILS MODAL
+========================= -->
+
+<div
+    class="admin-modal"
+    id="orderDetailsModal"
+    style="display: none;"
+>
+
+    <div
+        class="admin-modal-content"
+        style="max-width: 800px;"
+    >
+
+        <div class="admin-modal-header">
+
+            <h2>
+                Order Details
+            </h2>
+
+            <button
+                type="button"
+                id="closeOrderDetailsModal"
+                class="modal-close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- ORDER DETAILS -->
+
+        <div id="orderDetailsContent">
+
+            <p>
+                Loading order details...
+            </p>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                type="button"
+                class="btn"
+                id="closeOrderDetailsBtn"
+            >
+                Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

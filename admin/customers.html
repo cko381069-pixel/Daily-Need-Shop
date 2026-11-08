@@ -1,0 +1,380 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Manage Customers | Dayli Need Shop
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="admin-container">
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <h2>
+            Admin Panel
+        </h2>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    📊 Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    📦 Products
+                </a>
+            </li>
+
+            <li>
+                <a href="categories.html">
+                    🗂️ Categories
+                </a>
+            </li>
+
+            <li>
+                <a href="orders.html">
+                    🛒 Orders
+                </a>
+            </li>
+
+            <li>
+                <a href="customers.html">
+                    👥 Customers
+                </a>
+            </li>
+
+            <li>
+                <a href="reports.html">
+                    📈 Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="settings.html">
+                    ⚙️ Settings
+                </a>
+            </li>
+
+            <li>
+                <a href="../index.html">
+                    🏠 Website
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="admin-main">
+
+
+        <!-- PAGE HEADER -->
+
+        <header class="admin-header">
+
+            <h1>
+                Manage Customers
+            </h1>
+
+            <p>
+                View and Manage Registered Customers
+            </p>
+
+        </header>
+
+
+
+        <!-- =========================
+             TOP BAR
+        ========================== -->
+
+        <div class="product-top-bar">
+
+            <input
+                type="text"
+                id="customerSearch"
+                placeholder="🔍 Search Customer..."
+            >
+
+            <button
+                type="button"
+                class="btn"
+                id="addCustomerBtn"
+            >
+                + Add Customer
+            </button>
+
+        </div>
+
+
+
+        <!-- =========================
+             CUSTOMERS TABLE
+        ========================== -->
+
+        <table class="admin-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        ID
+                    </th>
+
+                    <th>
+                        Name
+                    </th>
+
+                    <th>
+                        Email
+                    </th>
+
+                    <th>
+                        Phone
+                    </th>
+
+                    <th>
+                        Join Date
+                    </th>
+
+                    <th>
+                        Orders
+                    </th>
+
+                    <th>
+                        Action
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="customersTableBody">
+
+                <tr>
+
+                    <td colspan="7">
+
+                        Loading customers...
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+
+
+        <!-- =========================
+             PAGINATION
+        ========================== -->
+
+        <div class="pagination">
+
+            <a
+                href="#"
+                id="previousCustomers"
+            >
+                Previous
+            </a>
+
+
+            <a
+                href="#"
+                class="active"
+            >
+                1
+            </a>
+
+
+            <a
+                href="#"
+                id="nextCustomers"
+            >
+                Next
+            </a>
+
+        </div>
+
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =================================================
+     CUSTOMER DETAILS MODAL
+================================================= -->
+
+<div
+    id="customerDetailsModal"
+    style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 99999;
+        padding: 20px;
+        box-sizing: border-box;
+    "
+>
+
+
+    <!-- MODAL BOX -->
+
+    <div
+        style="
+            width: 100%;
+            max-width: 520px;
+            max-height: 80vh;
+            overflow-y: auto;
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 25px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+        "
+    >
+
+
+        <!-- MODAL HEADER -->
+
+        <div
+            style="
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 20px;
+            "
+        >
+
+            <h2
+                style="
+                    margin: 0;
+                "
+            >
+                Customer Details
+            </h2>
+
+
+            <button
+                type="button"
+                id="closeCustomerDetailsModal"
+                style="
+                    border: none;
+                    background: transparent;
+                    font-size: 25px;
+                    cursor: pointer;
+                    line-height: 1;
+                "
+            >
+                &times;
+            </button>
+
+        </div>
+
+
+
+        <!-- CUSTOMER INFORMATION -->
+
+        <div
+            id="customerDetailsContent"
+        >
+
+            <p>
+                Loading customer details...
+            </p>
+
+        </div>
+
+
+
+        <!-- MODAL FOOTER -->
+
+        <div
+            style="
+                margin-top: 25px;
+                text-align: right;
+            "
+        >
+
+            <button
+                type="button"
+                id="closeCustomerDetailsBtn"
+                class="btn"
+            >
+                Close
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     ADMIN JAVASCRIPT
+========================= -->
+
+<script src="js/admin.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,445 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Manage Categories | Dayli Need Shop</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/responsive.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css"
+    >
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <h2>Admin Panel</h2>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    📊 Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    📦 Products
+                </a>
+            </li>
+
+            <li>
+                <a href="categories.html">
+                    🗂️ Categories
+                </a>
+            </li>
+
+            <li>
+                <a href="orders.html">
+                    🛒 Orders
+                </a>
+            </li>
+
+            <li>
+                <a href="customers.html">
+                    👥 Customers
+                </a>
+            </li>
+
+            <li>
+                <a href="reports.html">
+                    📈 Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="settings.html">
+                    ⚙ Settings
+                </a>
+            </li>
+
+            <li>
+                <a href="../index.html">
+                    🏠 Website
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="admin-main">
+
+        <header class="admin-header">
+
+            <h1>
+                Manage Categories
+            </h1>
+
+            <p>
+                Add, Edit and Delete Categories
+            </p>
+
+        </header>
+
+
+        <!-- TOP BAR -->
+
+        <div class="product-top-bar">
+
+            <input
+                type="text"
+                id="categorySearch"
+                placeholder="🔍 Search Category..."
+                autocomplete="off"
+            >
+
+            <button
+                type="button"
+                class="btn"
+                id="addCategoryBtn"
+            >
+                + Add Category
+            </button>
+
+        </div>
+
+
+        <!-- CATEGORY TABLE -->
+
+        <div class="admin-table-wrapper">
+
+            <table class="admin-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Image</th>
+
+                        <th>Category</th>
+
+                        <th>Description</th>
+
+                        <th>Created</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="categoriesTableBody">
+
+                    <tr>
+
+                        <td colspan="6">
+                            Loading categories...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- =========================
+             ADD CATEGORY MODAL
+        ========================== -->
+
+        <div
+            class="admin-modal"
+            id="categoryModal"
+            style="display: none;"
+        >
+
+            <div class="admin-modal-content">
+
+                <div class="admin-modal-header">
+
+                    <h2>
+                        Add Category
+                    </h2>
+
+                    <button
+                        type="button"
+                        id="closeCategoryModal"
+                        class="modal-close"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <form id="addCategoryForm">
+
+                    <div class="form-group">
+
+                        <label for="categoryName">
+                            Category Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="categoryName"
+                            placeholder="Enter category name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="categoryDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="categoryDescription"
+                            placeholder="Enter category description"
+                            rows="4"
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="categoryImage">
+                            Category Image
+                        </label>
+
+                        <input
+                            type="file"
+                            id="categoryImage"
+                            accept="image/jpeg,image/jpg,image/png,image/webp"
+                        >
+
+                        <small
+                            style="
+                                display: block;
+                                margin-top: 6px;
+                                color: #777;
+                            "
+                        >
+                            JPG, JPEG, PNG or WEBP — Maximum 5MB
+                        </small>
+
+                    </div>
+
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            class="btn"
+                            id="cancelCategoryBtn"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="btn"
+                        >
+                            Save Category
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             EDIT CATEGORY MODAL
+        ========================== -->
+
+        <div
+            class="admin-modal"
+            id="editCategoryModal"
+            style="display: none;"
+        >
+
+            <div class="admin-modal-content">
+
+                <div class="admin-modal-header">
+
+                    <h2>
+                        Edit Category
+                    </h2>
+
+                    <button
+                        type="button"
+                        id="closeEditCategoryModal"
+                        class="modal-close"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+                <form id="editCategoryForm">
+
+                    <!-- Hidden Category ID -->
+
+                    <input
+                        type="hidden"
+                        id="editCategoryId"
+                    >
+
+
+                    <!-- CATEGORY NAME -->
+
+                    <div class="form-group">
+
+                        <label for="editCategoryName">
+                            Category Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="editCategoryName"
+                            placeholder="Enter category name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- DESCRIPTION -->
+
+                    <div class="form-group">
+
+                        <label for="editCategoryDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="editCategoryDescription"
+                            placeholder="Enter category description"
+                            rows="4"
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- CATEGORY IMAGE -->
+
+                    <div class="form-group">
+
+                        <label for="editCategoryImage">
+                            Category Image
+                        </label>
+
+                        <input
+                            type="file"
+                            id="editCategoryImage"
+                            accept="image/jpeg,image/jpg,image/png,image/webp"
+                        >
+
+                        <small
+                            style="
+                                display: block;
+                                margin-top: 6px;
+                                color: #777;
+                            "
+                        >
+                            Select a new image only if you want
+                            to replace the current image.
+                            Maximum 5MB.
+                        </small>
+
+                    </div>
+
+
+                    <!-- CURRENT IMAGE -->
+
+                    <div
+                        id="currentCategoryImage"
+                        style="
+                            margin-top: 10px;
+                            margin-bottom: 15px;
+                        "
+                    ></div>
+
+
+                    <!-- ACTION BUTTONS -->
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            class="btn"
+                            id="cancelEditCategoryBtn"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="btn"
+                        >
+                            Update Category
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

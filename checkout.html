@@ -1,0 +1,349 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Dayli Need Shop</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>Dayli Need Shop</h2>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart <span id="cartCount">0</span></a></li>
+                  <li> <a href="orders.html">My Orders </a></li>
+                <li><a href="checkout.html" class="active">Checkout</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <section class="page-title">
+
+        <h1>Checkout</h1>
+
+        <p>Complete Your Order</p>
+
+    </section>
+
+
+    <!-- ================= CHECKOUT ================= -->
+
+    <section class="checkout-container">
+
+        <form class="checkout-form" id="checkoutForm">
+
+            <!-- CUSTOMER INFORMATION -->
+
+            <div class="customer-info">
+
+                <h2>Customer Information</h2>
+
+                <div class="form-group">
+
+                    <label for="fullName">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email address"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="phone">Phone Number</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="address">Delivery Address</label>
+
+                    <textarea
+                        id="address"
+                        name="address"
+                        rows="5"
+                        placeholder="Enter your complete delivery address"
+                        required
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- PAYMENT METHOD -->
+
+            <div class="payment-section">
+
+                <h2>Payment Method</h2>
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="Cash on Delivery"
+                        required
+                    >
+
+                    <span>Cash on Delivery</span>
+
+                </label>
+
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="Bank Transfer"
+                    >
+
+                    <span>Bank Transfer</span>
+
+                </label>
+
+
+                <label class="payment-option">
+
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="Credit / Debit Card"
+                    >
+
+                    <span>Credit / Debit Card</span>
+
+                </label>
+
+            </div>
+
+
+            <!-- COUPON -->
+
+            <div class="coupon-section">
+
+                <h2>Coupon Code</h2>
+
+                <div class="coupon-box">
+
+                    <input
+                        type="text"
+                        id="couponCode"
+                        placeholder="Enter coupon code"
+                    >
+
+                    <button
+                        type="button"
+                        class="coupon-btn"
+                        onclick="applyCoupon()"
+                    >
+                        Apply
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ORDER SUMMARY -->
+
+            <div class="order-summary">
+
+                <h2>Order Summary</h2>
+
+                <!-- Products will be loaded from Cart -->
+
+                <div id="checkoutItems">
+
+                    <!-- JavaScript will add cart items here -->
+
+                </div>
+
+
+                <hr>
+
+
+                <div class="summary-row">
+
+                    <span>Subtotal</span>
+
+                    <span id="checkoutSubtotal">฿0</span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>Shipping</span>
+
+                    <span id="checkoutShipping">฿0</span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>Tax</span>
+
+                    <span id="checkoutTax">฿0</span>
+
+                </div>
+
+
+                <hr>
+
+
+                <div class="summary-total">
+
+                    <h3>Total</h3>
+
+                    <h3 id="checkoutTotal">฿0</h3>
+
+                </div>
+
+
+                <!-- SINGLE PLACE ORDER BUTTON -->
+
+                <button
+                    type="submit"
+                    class="btn place-order-btn"
+                >
+                    Place Order
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+
+                <h2>Dayli Need Shop</h2>
+
+                <p>
+                    Your Trusted Grocery & Daily Needs Store.
+                </p>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="products.html">Products</a>
+                    </li>
+
+                    <li>
+                        <a href="cart.html">Cart</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="footer-box">
+
+                <h3>Contact</h3>
+
+                <p>Email: info@daylineedshop.com</p>
+
+                <p>Phone: +66 123 456 789</p>
+
+                <p>Thailand</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 Dayli Need Shop.
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+ <script src="js/app.js"></script>
+    <script src="js/checkout.js"></script>
+
+</body>
+
+</html>

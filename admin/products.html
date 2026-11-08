@@ -1,0 +1,396 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Products | Dayli Need Shop</title>
+
+    <!-- Main Website CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+
+<body>
+
+
+<div class="admin-container">
+
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <h2>Admin Panel</h2>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    📊 Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    📦 Products
+                </a>
+            </li>
+            <li><a href="categories.html">🗂️ Categories</a></li>
+
+            <li>
+                <a href="orders.html">
+                    🛒 Orders
+                </a>
+            </li>
+
+            <li>
+                <a href="customers.html">
+                    👥 Customers
+                </a>
+            </li>
+
+            <li>
+                <a href="reports.html">
+                    📈 Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="settings.html">
+                    ⚙ Settings
+                </a>
+            </li>
+
+            <li>
+                <a href="../index.html">
+                    🏠 Website
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="admin-main">
+
+
+        <!-- =========================
+             HEADER
+        ========================== -->
+
+        <header class="admin-header">
+
+            <h1>
+                Manage Products
+            </h1>
+
+            <p>
+                Add, Edit and Delete Products
+            </p>
+
+        </header>
+
+
+
+        <!-- =========================
+             PRODUCT TOP BAR
+        ========================== -->
+
+        <div class="product-top-bar">
+
+            <input
+                type="text"
+                id="productSearch"
+                placeholder="🔍 Search Product..."
+                autocomplete="off"
+            >
+            <!-- =========================
+     ADD PRODUCT MODAL
+========================== -->
+
+<div
+    class="admin-modal"
+    id="productModal"
+    style="display: none;"
+>
+
+    <div class="admin-modal-content">
+
+        <div class="admin-modal-header">
+
+            <h2>Add Product</h2>
+
+            <button
+                type="button"
+                id="closeProductModal"
+                class="modal-close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="addProductForm">
+
+
+            <!-- Product Name -->
+
+            <div class="form-group">
+
+                <label for="productName">
+                    Product Name
+                </label>
+
+                <input
+                    type="text"
+                    id="productName"
+                    placeholder="Enter product name"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Category -->
+
+            <div class="form-group">
+
+                <label for="productCategory">
+                    Category ID
+                </label>
+
+                <input
+                    type="number"
+                    id="productCategory"
+                    placeholder="Enter category ID"
+                    min="1"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Description -->
+
+            <div class="form-group">
+
+                <label for="productDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="productDescription"
+                    placeholder="Enter product description"
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+
+            <!-- Price -->
+
+            <div class="form-group">
+
+                <label for="productPrice">
+                    Price (฿)
+                </label>
+
+                <input
+                    type="number"
+                    id="productPrice"
+                    placeholder="Enter price"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Stock -->
+
+            <div class="form-group">
+
+                <label for="productStock">
+                    Stock
+                </label>
+
+                <input
+                    type="number"
+                    id="productStock"
+                    placeholder="Enter stock quantity"
+                    min="0"
+                    required
+                >
+
+            </div>
+
+
+            <!-- Image -->
+
+            <div class="form-group">
+
+                <label for="productImage">
+                    Image Path
+                </label>
+
+                <input
+                    type="text"
+                    id="productImage"
+                    placeholder="Example: ../assets/rice.jpeg"
+                >
+
+            </div>
+
+
+            <!-- Buttons -->
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="btn"
+                    id="cancelProductBtn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+                    Save Product
+                </button>
+
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+            <button
+                type="button"
+                class="btn"
+                id="addProductBtn"
+            >
+                + Add Product
+            </button>
+
+        </div>
+
+
+
+        <!-- =========================
+             PRODUCTS TABLE
+        ========================== -->
+
+        <div class="admin-table-wrapper">
+
+            <table class="admin-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Image
+                        </th>
+
+                        <th>
+                            Product
+                        </th>
+
+                        <th>
+                            Category
+                        </th>
+
+                        <th>
+                            Price
+                        </th>
+
+                        <th>
+                            Stock
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="productsTableBody">
+
+                    <!--
+                        Products will be loaded
+                        dynamically from the backend API.
+                    -->
+
+                    <tr>
+
+                        <td colspan="6">
+                            Loading products...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+
+        <!-- =========================
+             EMPTY / ERROR MESSAGE
+        ========================== -->
+
+        <div
+            id="productsMessage"
+            style="display: none;"
+        >
+        </div>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- =========================
+     ADMIN JAVASCRIPT
+========================== -->
+
+<script src="js/admin.js"></script>
+
+
+</body>
+
+</html>

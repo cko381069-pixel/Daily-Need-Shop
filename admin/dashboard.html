@@ -1,0 +1,179 @@
+ <!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Dashboard | Dayli Need Shop</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<link rel="stylesheet" href="../css/responsive.css">
+
+<link rel="stylesheet" href="css/admin.css">
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+<!-- Sidebar Start -->
+
+<aside class="sidebar">
+
+<h2>Admin Panel</h2>
+
+<ul>
+
+<li><a href="dashboard.html">📊 Dashboard</a></li>
+
+<li><a href="products.html">📦 Products</a></li>
+
+<li><a href="categories.html">🗂️ Categories</a></li>
+
+<li><a href="orders.html">🛒 Orders</a></li>
+
+<li><a href="customers.html">👥 Customers</a></li>
+
+<li><a href="reports.html">📈 Reports</a></li>
+
+<li><a href="settings.html">⚙ Settings</a></li>
+
+<li><a href="../index.html">🏠 Website</a></li>
+
+<li><a href="#" id="adminLoguot">Logout</a></li>
+
+</ul>
+
+</aside>
+
+<!-- Main Content Start -->
+
+<main class="admin-main">
+
+<header class="admin-header">
+
+<h1>Dashboard</h1>
+
+<p>Welcome Admin 👋</p>
+
+</header>
+
+
+<!-- Dashboard Statistics Start -->
+
+<section class="dashboard-cards">
+
+<div class="card">
+
+<h2 id="totalProducts">0</h2>
+
+<p>Total Products</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="totalOrders">0</h2>
+
+<p>Total Orders</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="totalCustomers">0</h2>
+
+<p>Total Customers</p>
+
+</div>
+
+<div class="card">
+
+<h2 id="totalRevenue">฿0</h2>
+
+<p>Total Revenue</p>
+
+</div>
+
+</section>
+
+<!-- Dashboard Statistics End -->
+
+
+<!-- Recent Orders Start -->
+
+<section class="recent-orders">
+
+<h2>Recent Orders</h2>
+
+<table class="admin-table">
+
+<thead>
+
+<tr>
+
+<th>Order ID</th>
+
+<th>Customer</th>
+
+<th>Amount</th>
+
+<th>Status</th>
+
+</tr>
+
+</thead>
+
+<tbody id="recentOrdersBody">
+
+<!-- Real orders will load here -->
+
+</tbody>
+
+</table>
+
+</section>
+
+<!-- Recent Orders End -->
+
+
+<!-- Sales Overview Start -->
+
+ <section class="sales-overview">
+
+    <h2>Sales Overview</h2>
+
+    <div class="sales-card">
+        <p>📅 Today Sales</p>
+        <h3 id="todaySales">฿0</h3>
+    </div>
+
+    <div class="sales-card">
+        <p>📅 This Month</p>
+        <h3 id="monthlySales">฿0</h3>
+    </div>
+
+    <div class="sales-card">
+        <p>📅 This Year</p>
+        <h3 id="yearlySales">฿0</h3>
+    </div>
+
+</section>
+
+<!-- Sales Overview End -->
+
+</main>
+
+</div>
+
+<script src="js/admin.js"></script>
+
+</body>
+
+</html>

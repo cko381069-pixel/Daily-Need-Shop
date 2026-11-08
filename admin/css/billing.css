@@ -1,0 +1,435 @@
+/* =========================
+   BILLING PAGE
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f7f7f7;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.billing-page {
+    width: min(100%, 1000px);
+    margin: 35px auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.billing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+
+    padding-bottom: 25px;
+    border-bottom: 3px solid #15ff00;
+}
+
+.billing-header h1 {
+    margin: 0 0 8px;
+    color: #33ff00;
+    font-size: 30px;
+    letter-spacing: 1px;
+}
+
+.billing-header p {
+    margin: 4px 0;
+    color: #777;
+    font-size: 14px;
+}
+
+.billing-title {
+    text-align: right;
+}
+
+.billing-title h2 {
+    margin: 0 0 12px;
+    font-size: 28px;
+    color: #222;
+}
+
+.billing-title p {
+    color: #555;
+}
+
+
+/* =========================
+   CUSTOMER / DELIVERY INFO
+========================= */
+
+.billing-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.billing-card {
+    padding: 22px;
+    background: #fff8e1;
+    border-left: 4px solid #ffb300;
+    border-radius: 8px;
+}
+
+.billing-card h3 {
+    margin: 0 0 15px;
+    color: #222;
+    font-size: 18px;
+}
+
+.billing-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.billing-card strong {
+    color: #333;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.billing-products {
+    margin-top: 35px;
+}
+
+.billing-products h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #222;
+}
+
+.billing-table-wrapper {
+    overflow-x: auto;
+}
+
+.billing-table-wrapper table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.billing-table-wrapper th {
+    background: #98f54c;
+    color: #fff;
+    padding: 13px 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.billing-table-wrapper td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.billing-table-wrapper tbody tr:hover {
+    background: #fffaf0;
+}
+
+.loading-cell {
+    text-align: center !important;
+    color: #777;
+}
+
+
+/* =========================
+   BILL SUMMARY
+========================= */
+
+.billing-summary {
+    width: min(100%, 420px);
+    margin: 30px 0 0 auto;
+    border-top: 2px solid #eee;
+    padding-top: 15px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 9px 0;
+
+    font-size: 15px;
+}
+
+.summary-row strong {
+    font-weight: 600;
+}
+
+.grand-total {
+    margin-top: 10px;
+    padding: 15px 0;
+
+    border-top: 2px solid #ffb300;
+
+    font-size: 20px;
+    color: #ff9800;
+}
+
+
+/* =========================
+   PAYMENT
+========================= */
+
+.payment-information {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+
+    margin-top: 25px;
+    padding: 18px 20px;
+
+    background: #fafafa;
+    border-radius: 8px;
+
+    font-size: 14px;
+}
+
+.payment-information span {
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.billing-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+
+    margin-top: 30px;
+    padding-top: 25px;
+
+    border-top: 1px solid #eee;
+}
+
+.billing-actions .btn {
+    border: none;
+    border-radius: 6px;
+
+    padding: 11px 20px;
+
+    background: #ff9800;
+    color: #fff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.billing-actions .btn:hover {
+    background: #f57c00;
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.billing-footer {
+    margin-top: 35px;
+    padding-top: 20px;
+
+    border-top: 1px solid #eee;
+
+    text-align: center;
+    color: #777;
+
+    font-size: 13px;
+}
+
+.billing-footer strong {
+    color: #5bf501;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .billing-page {
+        margin: 15px;
+        padding: 25px 18px;
+    }
+
+    .billing-header {
+        flex-direction: column;
+    }
+
+    .billing-title {
+        text-align: left;
+    }
+
+    .billing-info {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-information {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .billing-actions {
+        flex-direction: column;
+    }
+
+    .billing-actions .btn {
+        width: 100%;
+    }
+}
+
+ /* =========================
+   A4 PRINT / PDF
+========================= */
+
+@page {
+    size: A4;
+    margin: 12mm;
+}
+
+@media print {
+
+    html,
+    body {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0;
+        padding: 0;
+        background: #fff !important;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .billing-page {
+        width: 100%;
+        min-height: 0;
+
+        margin: 0;
+        padding: 10mm;
+
+        background: #fff;
+
+        border-radius: 0;
+        box-shadow: none;
+
+        overflow: hidden;
+    }
+
+    /* Hide buttons while printing */
+    .billing-actions {
+        display: none !important;
+    }
+
+    /* Keep watermark visible */
+    .billing-page::before {
+        opacity: 0.08;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    /* Information cards */
+    .billing-card {
+        background: transparent !important;
+        border-left: 3px solid #ffb300;
+    }
+
+    /* Table header */
+    .billing-table-wrapper th {
+        background: #ffb300 !important;
+        color: #fff !important;
+    }
+
+    /* Prevent rows from splitting */
+    .billing-table-wrapper tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Keep important sections together */
+    .billing-header,
+    .billing-info,
+    .billing-products,
+    .billing-summary,
+    .payment-information,
+    .billing-footer {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    /* Remove hover effects */
+    .billing-table-wrapper tbody tr:hover {
+        background: transparent !important;
+    }
+
+    /* Footer */
+    .billing-footer {
+        margin-top: 25px;
+    }
+}
+/* =========================
+   BILL LOGO WATERMARK
+========================= */
+
+.billing-page {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background logo */
+.billing-page::before {
+    content: "";
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 650px;
+    height: 650px;
+
+    transform: translate(-50%, -50%);
+
+    background-image: url("../../assets/hero.jpeg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    opacity: 0.08;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+/* Keep bill content above logo */
+.billing-page > * {
+    position: relative;
+    z-index: 1;
+}

@@ -1,0 +1,275 @@
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart | Dayli Need Shop</title>
+
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/carts.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <h2>Dayli Need Shop</h2>
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="products.html">Products</a>
+            </li>
+
+            <li>
+                <a href="cart.html" class="active">
+                    Cart
+                    <span id="cartCount">0</span>
+                </a>
+            </li>
+
+            <li> <a href="orders.html">My Orders </a></li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+            <li>
+                <a href="login.html">Login</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= PAGE TITLE ================= -->
+
+<section class="page-title">
+
+    <h1>Shopping Cart</h1>
+
+    <p>Review Your Selected Products</p>
+
+</section>
+
+
+
+<!-- ================= CART ================= -->
+
+<section class="cart-container">
+
+
+    <!-- CART TABLE -->
+
+    <div class="cart-table-wrapper">
+
+        <table class="cart-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Product</th>
+
+                    <th>Price</th>
+
+                    <th>Quantity</th>
+
+                    <th>Total</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+            </thead>
+
+
+            <!--
+                JavaScript will automatically
+                insert cart products here.
+            -->
+
+            <tbody>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+
+    <!-- ================= CART SUMMARY ================= -->
+
+    <div class="cart-summary">
+
+        <h2>Order Summary</h2>
+
+
+        <p>
+            Subtotal:
+            <strong id="cartSubtotal">฿0</strong>
+        </p>
+
+
+        <p>
+            Shipping:
+            <strong id="cartShipping">฿0</strong>
+        </p>
+
+
+        <p>
+            Tax:
+            <strong id="cartTax">฿0</strong>
+        </p>
+
+
+        <hr>
+
+
+        <h3>
+            Grand Total:
+            <span id="cartTotal">฿0</span>
+        </h3>
+
+
+        <div class="cart-actions">
+
+            <a
+                href="products.html"
+                class="btn"
+            >
+                Continue Shopping
+            </a>
+
+
+            <a
+                href="checkout.html"
+                class="btn"
+            >
+                Proceed to Checkout
+            </a>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <div class="footer-box">
+
+            <h2>Dayli Need Shop</h2>
+
+            <p>
+                Your Trusted Grocery & Daily Needs Store.
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="products.html">Products</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <div class="footer-box">
+
+            <h3>Contact Us</h3>
+
+            <p>
+                Email: info@daylineedshop.com
+            </p>
+
+            <p>
+                Phone: +66 123 456 789
+            </p>
+
+            <p>
+                Thailand
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <p>
+            &copy; 2026 Dayli Need Shop.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="js/app.js"></script>
+<script src="js/cart.js"></script>
+
+
+</body>
+
+</html>

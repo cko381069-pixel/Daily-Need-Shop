@@ -1,0 +1,462 @@
+/* =========================================
+   CHECKOUT PAGE
+   Dayli Need Shop
+========================================= */
+
+
+/* =========================================
+   CHECKOUT CONTAINER
+========================================= */
+
+.checkout-container {
+    max-width: 1200px;
+    margin: 50px auto 70px;
+    padding: 0 20px;
+}
+
+
+/* =========================================
+   CHECKOUT FORM
+========================================= */
+
+.checkout-form {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 25px;
+    align-items: start;
+}
+
+
+/* =========================================
+   COMMON SECTIONS
+========================================= */
+
+.customer-info,
+.payment-section,
+.coupon-section,
+.order-summary {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 25px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.customer-info {
+    grid-column: 1;
+}
+
+.payment-section {
+    grid-column: 1;
+}
+
+.coupon-section {
+    grid-column: 1;
+}
+
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.checkout-form h2 {
+    margin: 0 0 22px;
+    font-size: 22px;
+    color: #222;
+}
+
+.order-summary h2 {
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   CUSTOMER FORM
+========================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.3s;
+    background: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff7a00;
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.10);
+}
+
+
+/* =========================================
+   PAYMENT SECTION
+========================================= */
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 15px;
+    color: #333;
+}
+
+.payment-option:last-child {
+    margin-bottom: 0;
+}
+
+.payment-option:hover {
+    border-color: #ff7a00;
+    background: #fff8f0;
+}
+
+.payment-option input {
+    width: 17px;
+    height: 17px;
+    accent-color: #ff7a00;
+    cursor: pointer;
+}
+
+.payment-option span {
+    flex: 1;
+}
+
+
+/* =========================================
+   COUPON SECTION
+========================================= */
+
+.coupon-box {
+    display: flex;
+    gap: 10px;
+}
+
+.coupon-box input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.coupon-box input:focus {
+    border-color: #ff7a00;
+    box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.10);
+}
+
+.coupon-btn {
+    padding: 13px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #ff7a00;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.coupon-btn:hover {
+    background: #e66d00;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   ORDER SUMMARY
+========================================= */
+
+.order-summary {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    position: sticky;
+    top: 20px;
+}
+
+.checkout-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.checkout-item:last-child {
+    border-bottom: none;
+}
+
+.checkout-item-info {
+    flex: 1;
+}
+
+.checkout-item-name {
+    margin: 0 0 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.checkout-item-quantity {
+    font-size: 13px;
+    color: #777;
+}
+
+.checkout-item-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ff7a00;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   SUMMARY ROWS
+========================================= */
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.summary-row span:last-child {
+    font-weight: 600;
+    color: #333;
+}
+
+.order-summary hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 15px 0;
+}
+
+
+/* =========================================
+   TOTAL
+========================================= */
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0 20px;
+}
+
+.summary-total h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #222;
+}
+
+.summary-total h3:last-child {
+    color: #ff7a00;
+}
+
+
+/* =========================================
+   PLACE ORDER BUTTON
+========================================= */
+
+.place-order-btn {
+    width: 100%;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #ff7a00;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.place-order-btn:hover {
+    background: #e66d00;
+    transform: translateY(-2px);
+}
+
+.place-order-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   EMPTY CHECKOUT MESSAGE
+========================================= */
+
+.empty-checkout {
+    text-align: center;
+    padding: 25px 10px;
+    color: #777;
+    font-size: 14px;
+}
+
+.empty-checkout a {
+    color: #ff7a00;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.empty-checkout a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+    .checkout-form {
+        grid-template-columns: 1fr;
+    }
+
+    .customer-info,
+    .payment-section,
+    .coupon-section,
+    .order-summary {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .order-summary {
+        position: static;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .checkout-container {
+        margin: 30px auto 50px;
+        padding: 0 12px;
+    }
+
+    .checkout-form {
+        gap: 18px;
+    }
+
+    .customer-info,
+    .payment-section,
+    .coupon-section,
+    .order-summary {
+        padding: 20px 16px;
+        border-radius: 10px;
+    }
+
+    .checkout-form h2 {
+        font-size: 19px;
+        margin-bottom: 18px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .payment-option {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .coupon-box {
+        flex-direction: column;
+    }
+
+    .coupon-box input {
+        width: 100%;
+    }
+
+    .coupon-btn {
+        width: 100%;
+    }
+
+    .summary-row {
+        font-size: 14px;
+    }
+
+    .summary-total h3 {
+        font-size: 18px;
+    }
+
+    .place-order-btn {
+        padding: 13px;
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+    .checkout-container {
+        padding: 0 8px;
+    }
+
+    .customer-info,
+    .payment-section,
+    .coupon-section,
+    .order-summary {
+        padding: 17px 13px;
+    }
+
+    .checkout-form h2 {
+        font-size: 18px;
+    }
+
+    .payment-option {
+        font-size: 13px;
+    }
+
+}
