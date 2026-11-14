@@ -37,13 +37,11 @@ app.use(
 
 const path = require("path");
 
-app.use(
-    "/uploads",
-    express.static(
-        path.join(__dirname, "uploads")
-    )
-);
+ const uploadDir =
+    process.env.UPLOAD_DIR ||
+    path.join(__dirname, "uploads");
 
+app.use("/uploads", express.static(uploadDir));
 
 // =========================
 // API ROUTES
